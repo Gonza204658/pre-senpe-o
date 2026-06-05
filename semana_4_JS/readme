@@ -1,0 +1,121 @@
+# Mini App — Gestión de Productos
+
+Este proyecto lo hice como parte de la historia de usuario M3S4 del módulo 3. La idea era armar una app web que juntara todo lo que venía aprendiendo: manipular el DOM, guardar datos en el navegador y conectarme a una API real. No fue fácil al principio pero al final todo funcionó.
+
+---
+
+## ¿Qué hace la app?
+
+Es una mini app para gestionar productos. Podés agregar productos con nombre, precio y descripción, verlos en pantalla, eliminarlos, y sincronizar todo con un servidor local usando JSON Server.
+
+---
+
+## Con qué está hecha
+
+- HTML5
+- JavaScript puro (sin frameworks, sin librerías)
+- Local Storage
+- Fetch API
+- JSON Server
+
+---
+
+## Cómo está organizada
+
+```
+Semana_4_JS/
+├── index.html   → el HTML con el formulario y la lista
+├── app.js       → toda la lógica, acá está todo
+└── db.json      → la base de datos falsa que usa JSON Server
+```
+
+---
+
+## Cómo correrla
+
+### Paso 1 — Instalar JSON Server (solo la primera vez)
+
+```bash
+npm install -g json-server
+```
+
+### Paso 2 — Entrar a la carpeta
+
+```bash
+cd "C:\Users\Diego Gonzalez\Desktop\JavaScrpit-1-2-3-4\Semana_4_JS"
+```
+
+### Paso 3 — Arrancar el servidor
+
+```bash
+json-server --watch db.json --port 3000
+```
+
+Si lo hiciste bien, vas a ver algo así:
+
+```
+Endpoints:
+http://localhost:3000/productos
+```
+
+### Paso 4 — Abrir el index.html en el navegador
+
+Con Live Server o doble clic. Y ya.
+
+> ⚠️ No cierres la terminal mientras usás la app o la API deja de funcionar.
+
+---
+
+## Qué puede hacer
+
+| Cosa | Cómo funciona |
+|---|---|
+| Agregar producto | Llenás el formulario y das clic en Agregar. Se guarda en la API y en el navegador. |
+| Eliminar producto | Cada producto tiene su botón Eliminar. Lo borra de todo: pantalla, navegador y API. |
+| Sincronizar | El botón Sincronizar trae lo que hay en el servidor y actualiza todo. |
+| Persistencia | Si recargás la página, los productos siguen ahí gracias al Local Storage. |
+| Validaciones | No te deja agregar nada si los campos están vacíos o el precio es inválido. |
+| Mensajes | Te avisa en verde si todo salió bien y en rojo si algo falló. Desaparecen solos. |
+
+---
+
+## Las operaciones con la API
+
+| Operación | Método | Para qué |
+|---|---|---|
+| Leer | GET | Trae todos los productos del servidor |
+| Crear | POST | Manda un producto nuevo al servidor |
+| Actualizar | PUT | Modifica un producto que ya existe |
+| Eliminar | DELETE | Borra un producto por su ID |
+
+---
+
+## Lo que aprendí haciendo esto
+
+- Que `Date.now()` como ID parece buena idea hasta que el DELETE empieza a fallar con 404
+- Que hay que dejar que json-server asigne los IDs, no inventarlos uno mismo
+- Que si el Local Storage guarda basura de una versión anterior, hay que limpiarlo con `localStorage.clear()`
+- Que `async/await` con `try/catch` hace que el código sea mucho más fácil de leer que los `.then()`
+- Que la Fetch API no lanza error si el servidor responde 404 — hay que revisarlo manualmente
+
+---
+
+## Si algo no funciona
+
+**La API no responde**  
+Revisá que JSON Server esté corriendo en la terminal. Si no está, volvé al paso 3.
+
+**Error: productos.forEach is not a function**  
+Abrí la consola del navegador, pegá esto y recargá:
+```js
+localStorage.clear()
+```
+
+**json-server no se reconoce**  
+Instalá Node.js desde [nodejs.org](https://nodejs.org) y después corré `npm install -g json-server`.
+
+---
+
+## Autor
+
+Diego González — Semana 4 JS — Historia de usuario M3S4

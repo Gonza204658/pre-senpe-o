@@ -1,0 +1,11 @@
+{
+  "productos": [
+    {
+      "id": "v7npgTjwcBI",
+      "nombre": "manuel",
+      "precio": 23,
+      "descripcion": "xaed"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

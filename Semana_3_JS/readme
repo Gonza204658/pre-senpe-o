@@ -1,0 +1,93 @@
+# Gestión Dinámica del DOM con Persistencia en el Navegador
+
+## Descripción
+Mini-app de lista de notas que permite agregar y eliminar elementos en el DOM, con persistencia de datos usando Local Storage para mantener las notas al recargar la página.
+
+
+## Tecnologías utilizadas
+- JavaScript (ES6+)
+- HTML5
+- Local Storage (Web API)
+
+## Estructura del proyecto
+1. Selecciona elementos del DOM → getElementById, querySelector
+2. Recupera notas de Local Storage al cargar
+3. Al click en Agregar:
+   → Valida input no vacío
+   → Crea <li> con textContent + botón Eliminar
+   → appendChild() a la lista
+   → Guarda en Local Storage
+4. Al click en Eliminar:
+   → removeChild() del <li>
+   → Actualiza Local Storage
+
+## Funcionalidades
+
+### Task 1 — Estructura base HTML
+- Título e instrucción
+- Input de texto y botón "Agregar"
+- Lista `<ul id="listaNotas">` para renderizar notas
+
+### Task 2 — Selección de elementos
+- `getElementById` para input y lista
+- `querySelector` para el botón
+- Log en consola confirmando las referencias
+
+### Task 3 — Agregar notas
+- Valida que el input no esté vacío
+- Crea `<li>` con `textContent` y botón "Eliminar"
+- Inserta con `appendChild()`
+- Limpia y enfoca el input
+- También funciona presionando **Enter**
+
+### Task 4 — Eliminar notas
+- Remueve el `<li>` con `removeChild()`
+- Log en consola de la nota eliminada
+
+### Task 5 — Persistencia con Local Storage
+- Arreglo en memoria sincronizado con `localStorage.setItem()`
+- Al cargar la página recupera notas con `localStorage.getItem()`
+- Log en consola con cuántas notas se cargaron
+
+
+
+## Cómo ejecutarlo
+
+1. Coloca `manipulacion_dom.html` y `manipulacion_dom.js` en la misma carpeta
+2. Abre `manipulacion_dom.html` con Live Server en VS Code
+3. Abre la consola con **F12** para ver los logs
+4. Para verificar Local Storage: **F12 → Application → Local Storage**
+
+
+
+## Conceptos aplicados
+- Manipulación del DOM: `appendChild()`, `removeChild()`, `createElement()`, `textContent`
+- Selección de elementos: `getElementById`, `querySelector`
+- Eventos: `addEventListener` (click, keydown)
+- Local Storage: `setItem()`, `getItem()`, `JSON.stringify()`, `JSON.parse()`
+- Validaciones básicas
+- Declaración de variables con `const` y `let`
+- Comentarios explicativos en cada sección
+
+
+## Ejemplo de salida en consola
+
+```
+=== REFERENCIAS DEL DOM ===
+Input: <input type="text" id="inputNota">
+Botón Agregar: <button id="btnAgregar">
+Lista de notas: <ul id="listaNotas">
+
+=== CARGA INICIAL: 2 nota(s) recuperada(s) de Local Storage ===
+
+Nota agregada: "Estudiar JavaScript"
+Local Storage actualizado: 3 nota(s) guardada(s).
+
+Nota eliminada: "Estudiar JavaScript"
+Local Storage actualizado: 2 nota(s) guardada(s).
+```
+
+---
+
+## Autor
+Desarrollado como parte de la Historia de Usuario **M3S3** del módulo de JavaScript.

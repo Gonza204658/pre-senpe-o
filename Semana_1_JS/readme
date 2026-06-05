@@ -1,0 +1,61 @@
+# Sistema Interactivo de Mensajes
+
+## Descripción
+Programa funcional en JavaScript que interactúa con el usuario solicitando su nombre y edad, valida la entrada y muestra mensajes dinámicos según las condiciones establecidas.
+
+
+## Tecnologías utilizadas
+- JavaScript (ES6+)
+- HTML5
+
+
+
+## Estructura del proyecto
+1. Solicita nombre → prompt()
+2. Solicita edad → prompt()
+3. Valida si la edad es número → isNaN()
+4. Muestra mensaje según edad → alert() + console.log()
+5. Si hay error → console.error()
+
+
+## Funcionalidades
+- Solicita el nombre del usuario mediante `prompt()`
+- Solicita la edad del usuario mediante `prompt()`
+- Valida que la edad ingresada sea un número válido
+- Muestra mensajes personalizados según la edad:
+  - **Menor de 18:** "Hola [nombre], eres menor de edad. ¡Sigue aprendiendo y disfrutando del código!"
+  - **Mayor o igual a 18:** "Hola [nombre], eres mayor de edad. ¡Prepárate para grandes oportunidades en el mundo de la programación!"
+- Muestra un error en consola si la edad no es un número válido
+
+
+## Cómo ejecutarlo
+
+1. Coloca ambos archivos (`index.html` y `sistema_interactivo.js`) en la misma carpeta
+2. Abre `index.html` con Live Server en VS Code
+3. Al cargar la página aparecerán los `prompt()` solicitando los datos
+4. Revisa los mensajes en la consola del navegador con **F12**
+
+
+
+## Conceptos aplicados
+- Declaración de variables con `let` y `const`
+- Tipos de datos en JavaScript
+- Uso de `console.log()`, `alert()`, `prompt()` y `console.error()`
+- Condicionales `if`, `else if`, `else`
+- Buenas prácticas: nomenclatura en camelCase y variables descriptivas
+- Comentarios explicativos en cada sección del código
+
+
+
+## Ejemplo de uso
+
+| Entrada | Resultado |
+|---|---|
+| Nombre: `Carlos`, Edad: `15` | "Hola Carlos, eres menor de edad. ¡Sigue aprendiendo y disfrutando del código!" |
+| Nombre: `María`, Edad: `25` | "Hola María, eres mayor de edad. ¡Prepárate para grandes oportunidades en el mundo de la programación!" |
+| Nombre: `Juan`, Edad: `abc` | `console.error("Error: Por favor, ingresa una edad válida en números.")` |
+
+---
+
+## Autor
+Desarrollado como parte de la Historia de Usuario **M3S1** del módulo de JavaScript.

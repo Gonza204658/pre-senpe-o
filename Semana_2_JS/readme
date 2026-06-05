@@ -1,0 +1,96 @@
+# Gestión de Datos con Objetos, Sets y Maps en JavaScript
+
+## Descripción
+Programa en JavaScript que consolida el uso de estructuras de datos avanzadas: objetos, Sets y Maps, para organizar, almacenar y manipular información de productos de manera eficiente.
+
+
+## Tecnologías utilizadas
+- JavaScript (ES6+)
+- HTML5
+
+
+
+## Estructura del proyecto
+1. Crea objeto de productos (id, nombre, precio)
+2. Crea Set con IDs → elimina duplicados → .add() .has() .delete()
+3. Crea Map de categorías → nombre de producto
+4. Itera con for...in, for...of, forEach()
+   Object.keys(), Object.values(), Object.entries()
+5. Valida productos con función validarProducto()
+6. Prueba con producto inválido → console.error()
+
+
+## Funcionalidades
+
+### Task 1 — Objeto de productos
+- Objeto con múltiples productos, cada uno con `id`, `nombre` y `precio`
+
+### Task 2 — Set
+- Crea un Set con valores repetidos que se eliminan automáticamente
+- Agrega elementos con `.add()`
+- Verifica existencia con `.has()`
+- Elimina elementos con `.delete()`
+- Recorre el Set con `for...of`
+
+### Task 3 — Map
+- Relaciona categorías (clave) con nombres de productos (valor)
+
+### Task 4 — Iteración
+- `for...in` para recorrer el objeto
+- `Object.keys()`, `Object.values()`, `Object.entries()` sobre el objeto
+- `for...of` para recorrer el Set
+- `forEach()` para recorrer el Map
+
+### Task 5 — Validación
+- Función `validarProducto()` que verifica que cada producto tenga `id`, `nombre` y `precio` válidos
+- Usa `console.error()` para reportar datos inválidos
+
+
+## Cómo ejecutarlo
+
+1. Coloca `index.html` y `gestion_datos.js` en la misma carpeta
+2. En el `index.html` vincula el script:
+```html
+<script src="gestion_datos.js"></script>
+```
+3. Abre `index.html` con Live Server en VS Code
+4. Abre la consola del navegador con **F12** para ver todos los resultados
+
+
+## Conceptos aplicados
+- Creación y manipulación de objetos
+- Uso de `Set` para garantizar unicidad de datos
+- Uso de `Map` para almacenar información asociativa
+- Bucles `for...in` y `for...of`
+- Métodos `forEach()`, `Object.keys()`, `Object.values()`, `Object.entries()`
+- Validaciones básicas con `console.error()`
+- Declaración de variables con `const` y `let`
+- Comentarios explicativos en cada sección
+
+
+
+## Ejemplo de salida en consola
+
+
+=== LISTA COMPLETA DE PRODUCTOS (Objeto) ===
+{ producto1: { id: 1, nombre: 'Laptop', precio: 1500000 }, ... }
+
+=== SET DE IDs (duplicados eliminados) ===
+Set(5) { 1, 2, 3, 4, 5 }
+
+=== MAP DE CATEGORÍAS Y PRODUCTOS ===
+Map(4) { 'Computadores' => 'Laptop', 'Periféricos' => 'Teclado', ... }
+
+=== VALIDACIÓN DE PRODUCTOS ===
+Laptop: ✅ Válido
+Mouse: ✅ Válido
+...
+Error: El producto "" tiene un id inválido.
+```
+
+> El mensaje de error al final es **esperado** — es la prueba del producto inválido del Task 5 para verificar que `console.error()` funciona correctamente.
+
+---
+
+## Autor
+Desarrollado como parte de la Historia de Usuario **M3S2** del módulo de JavaScript.
